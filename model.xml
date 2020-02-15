@@ -1,8 +1,152 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <featureModel>
+	<properties>
+		<graphics key="showhiddenfeatures" value="true"/>
+		<graphics key="legendautolayout" value="true"/>
+		<graphics key="showshortnames" value="false"/>
+		<graphics key="layout" value="horizontal"/>
+		<graphics key="showcollapsedconstraints" value="true"/>
+		<graphics key="legendhidden" value="false"/>
+		<graphics key="layoutalgorithm" value="1"/>
+	</properties>
 	<struct>
-		<and abstract="true" mandatory="true" name="Ejercicio4VentaComputadores">
-			<feature name="Base"/>
+		<and abstract="true" mandatory="true" name="Computador">
+			<alt mandatory="true" name="tipos">
+				<feature name="mesa"/>
+				<feature name="portatil"/>
+				<feature name="servidor"/>
+			</alt>
+			<alt mandatory="true" name="marcas">
+				<feature name="DELL"/>
+				<feature name="Toshiba"/>
+				<feature name="Lenovo"/>
+				<feature name="Apple"/>
+				<feature name="clon"/>
+			</alt>
+			<alt mandatory="true" name="Sistema operativo">
+				<alt name="personales">
+					<feature name="Windows 10"/>
+					<feature name="Fedora Liinux"/>
+					<feature name="OS X Yosemite"/>
+				</alt>
+				<alt name="servidores">
+					<feature name="Windows Server"/>
+					<feature name="Red Hat"/>
+					<feature name="OS X Server"/>
+				</alt>
+			</alt>
+			<and mandatory="true" name="CPU">
+				<alt mandatory="true" name="RAM">
+					<feature name="4GB"/>
+					<feature name="8GB"/>
+					<feature name="16GB"/>
+					<feature name="32GB"/>
+					<feature name="64GB"/>
+				</alt>
+				<alt mandatory="true" name="procesador">
+					<feature name="Intel"/>
+					<feature name="AMD"/>
+				</alt>
+				<alt mandatory="true" name="disco duro">
+					<feature name="500GB"/>
+					<feature name="1TB"/>
+					<feature name="2TB"/>
+					<feature name="5TB"/>
+					<feature name="10TB"/>
+				</alt>
+				<alt name="tarjeta gráfica">
+					<feature name="NVIDIA"/>
+					<feature name="ATI Radeon"/>
+				</alt>
+			</and>
+			<and name="pantalla">
+				<or name="tecnología">
+					<feature name="3D"/>
+					<feature name="4K"/>
+				</or>
+				<alt mandatory="true" name="tamaño">
+					<feature name="14"/>
+					<feature name="17"/>
+					<feature name="24"/>
+				</alt>
+			</and>
+			<feature name="planta de poder"/>
 		</and>
 	</struct>
+	<constraints>
+		<rule>
+			<imp>
+				<disj>
+					<var>mesa</var>
+					<var>portatil</var>
+				</disj>
+				<var>personales</var>
+			</imp>
+		</rule>
+		<rule>
+			<imp>
+				<var>servidor</var>
+				<var>servidores</var>
+			</imp>
+		</rule>
+		<rule>
+			<imp>
+				<var>portatil</var>
+				<var>pantalla</var>
+			</imp>
+		</rule>
+		<rule>
+			<not>
+				<conj>
+					<var>portatil</var>
+					<var>tecnología</var>
+				</conj>
+			</not>
+		</rule>
+		<rule>
+			<imp>
+				<disj>
+					<var>5TB</var>
+					<var>10TB</var>
+				</disj>
+				<var>servidor</var>
+			</imp>
+		</rule>
+		<rule>
+			<imp>
+				<disj>
+					<var>32GB</var>
+					<var>64GB</var>
+				</disj>
+				<var>servidor</var>
+			</imp>
+		</rule>
+		<rule>
+			<imp>
+				<var>Apple</var>
+				<disj>
+					<var>OS X Yosemite</var>
+					<var>OS X Server</var>
+				</disj>
+			</imp>
+		</rule>
+		<rule>
+			<imp>
+				<var>servidor</var>
+				<disj>
+					<var>32GB</var>
+					<var>64GB</var>
+				</disj>
+			</imp>
+		</rule>
+		<rule>
+			<imp>
+				<var>servidor</var>
+				<disj>
+					<var>5TB</var>
+					<var>10TB</var>
+				</disj>
+			</imp>
+		</rule>
+	</constraints>
 </featureModel>

@@ -1,5 +1,51 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <configuration>
-	<feature name="Ejercicio4VentaComputadores"/>
-	<feature name="Base"/>
+	<feature automatic="selected" name="Computador"/>
+	<feature automatic="selected" name="tipos"/>
+	<feature automatic="unselected" name="mesa"/>
+	<feature automatic="unselected" name="portatil"/>
+	<feature automatic="selected" manual="selected" name="servidor"/>
+	<feature automatic="selected" name="marcas"/>
+	<feature automatic="unselected" name="DELL"/>
+	<feature automatic="unselected" name="Toshiba"/>
+	<feature automatic="unselected" name="Lenovo"/>
+	<feature manual="selected" name="Apple"/>
+	<feature automatic="unselected" name="clon"/>
+	<feature automatic="selected" name="Sistema operativo"/>
+	<feature automatic="unselected" name="personales"/>
+	<feature automatic="unselected" name="Windows 10"/>
+	<feature automatic="unselected" name="Fedora Liinux"/>
+	<feature automatic="unselected" name="OS X Yosemite"/>
+	<feature automatic="selected" name="servidores"/>
+	<feature automatic="unselected" name="Windows Server"/>
+	<feature automatic="unselected" name="Red Hat"/>
+	<feature automatic="selected" name="OS X Server"/>
+	<feature automatic="selected" name="CPU"/>
+	<feature automatic="selected" name="RAM"/>
+	<feature automatic="unselected" name="4GB"/>
+	<feature automatic="unselected" name="8GB"/>
+	<feature automatic="unselected" name="16GB"/>
+	<feature manual="selected" name="32GB"/>
+	<feature automatic="unselected" name="64GB"/>
+	<feature automatic="selected" name="procesador"/>
+	<feature manual="selected" name="Intel"/>
+	<feature automatic="unselected" name="AMD"/>
+	<feature automatic="selected" name="disco duro"/>
+	<feature automatic="unselected" name="500GB"/>
+	<feature automatic="unselected" name="1TB"/>
+	<feature automatic="unselected" name="2TB"/>
+	<feature manual="selected" name="5TB"/>
+	<feature automatic="unselected" name="10TB"/>
+	<feature name="tarjeta gráfica"/>
+	<feature name="NVIDIA"/>
+	<feature name="ATI Radeon"/>
+	<feature name="pantalla"/>
+	<feature name="tecnología"/>
+	<feature name="3D"/>
+	<feature name="4K"/>
+	<feature name="tamaño"/>
+	<feature name="14"/>
+	<feature name="17"/>
+	<feature name="24"/>
+	<feature name="planta de poder"/>
 </configuration>
